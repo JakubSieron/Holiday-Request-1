@@ -1,0 +1,6 @@
+%h1= @hr.from
+%h1= @hr.to
+
+= link_to "Edit", edit_hr_path(@hr)
+= link_to "Delete", hr_path(@hr), method: :delete, data: { confirm: "are you sure?"}
+= link_to "Home", root_path
