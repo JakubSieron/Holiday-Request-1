@@ -25,7 +25,7 @@ class HrsController < ApplicationController
 	end
 
 	def update
-		if @hr.update
+		if @hr.update(hr_params)
 			redirect_to @hr
 		else 
 			render 'edit'
