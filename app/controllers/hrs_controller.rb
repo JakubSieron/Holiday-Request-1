@@ -9,11 +9,11 @@ class HrsController < ApplicationController
 	end
 
 	def new
-		@hr = Hr.new
+		@hr = current_employee.hr.build
 	end
 
 	def create
-		@hr = Hr.new(hr_params)
+		@hr = current_employee.hr.build(hr_params)
 
 		if @hr.save
 			redirect_to @hr
@@ -35,7 +35,7 @@ class HrsController < ApplicationController
 
 	def destroy
 		@hr.destroy
-		redirec_to root_path
+		redirect_to root_path
 	end
 
 	private

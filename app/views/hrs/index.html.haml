@@ -1,6 +1,7 @@
 - @hrs.each do |hr|
   %h2= link_to hr.from, hr
   %h2= link_to hr.to, hr
-  %p= time_ago_in_words(hr.created_at)
+  %p1= time_ago_in_words(hr.created_at)  
+  %p= hr.employee.email
 
 = link_to "New Request", new_hr_path
